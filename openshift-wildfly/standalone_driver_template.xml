@@ -1,0 +1,3 @@
+                    <driver name="microsoft" module="com.microsoft.sqlserver.jdbc">
+                        <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</xa-datasource-class>
+                    </driver>

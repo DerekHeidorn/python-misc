@@ -1,0 +1,21 @@
+                <datasource jta="false" jndi-name="java:/jdbc/orl/lrs/BclrsDS" pool-name="BclrsDS" enabled="true" use-java-context="true" use-ccm="true">
+                    <connection-url>${LRA_DATASOURCE_CONNECTION_URL}</connection-url>
+                    <driver>microsoft</driver>
+                    <pool>
+                        <min-pool-size>${LRA_DATASOURCE_MIN_POOL_SIZE}</min-pool-size>
+                        <max-pool-size>${LRA_DATASOURCE_MAX_POOL_SIZE}</max-pool-size>
+                        <prefill>true</prefill>
+                        <flush-strategy>FailingConnectionOnly</flush-strategy>
+                    </pool>
+                    <security>
+                        <user-name>${LRA_DATASOURCE_USERNAME}</user-name>
+                        <password>${LRA_DATASOURCE_PASSWORD}</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker"/>
+                        <check-valid-connection-sql>select 1</check-valid-connection-sql>
+                        <validate-on-match>false</validate-on-match>
+                        <background-validation>true</background-validation>
+                        <background-validation-millis>10000</background-validation-millis>
+                    </validation>
+                </datasource>
